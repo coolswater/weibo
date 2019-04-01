@@ -19,6 +19,7 @@ class WeiboSDK {
     public $format = 'json';
     public $decode_json = TRUE;
     public $connecttimeout = 30;
+	public static $boundary='';
     public $ssl_verifypeer = FALSE;
     public static $host = "https://api.weibo.com/2/";
     public static $authorizeURL = 'https://api.weibo.com/oauth2/authorize';
