@@ -1,7 +1,4 @@
 <?php
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
 /**
  * 新浪微博 OAuth 认证类(OAuth2)
  * 授权机制说明请大家参考微博开放平台文档：{@link http://open.weibo.com/wiki/Oauth2}
