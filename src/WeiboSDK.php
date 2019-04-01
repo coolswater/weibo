@@ -10,7 +10,7 @@ if (!defined('BASEPATH')) {
  * @Date: 2019/04/01
  * @version 1.0
  */
-class WeboSDK {
+class WeiboSDK {
     public $client_id;
     public $client_secret;
     public $access_token;
