@@ -27,10 +27,8 @@ class WeiboSDK {
     //构造方法
     function __construct($options) {
         $this->client_id = $options['client_id'];
-        $this->client_secret = $options['client_secret'];
-        $this->access_token = $options['access_token'];
-        $this->refresh_token = $options['refresh_token'];
         $this->redirect_uri = $options['redirect_uri'];
+        $this->client_secret = $options['client_secret'];
     }
     
     /**
