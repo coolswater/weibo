@@ -78,12 +78,12 @@ class WeiboSDK {
         $params['client_secret'] = $this->client_secret;
         $params['grant_type'] = 'authorization_code';
         
-        $response = $this->post(self::$accessTokenURL, 'POST', $params);
-        $token = json_decode($response, true);
+        $token = $this->post(self::$accessTokenURL, 'POST', $params);
+		
         if ( is_array($token) && !isset($token['error']) ) {
             $this->access_token = $token['access_token'];
         } else {
-            throw new OAuthException("get access token failed." . $token['error']);
+            throw new \Exception("get access token failed." . $token['error']);
         }
         
         return $token;
@@ -166,7 +166,6 @@ class WeiboSDK {
         $ci = curl_init();
         /* Curl settings */
         curl_setopt($ci, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
-        curl_setopt($ci, CURLOPT_USERAGENT, $this->useragent);
         curl_setopt($ci, CURLOPT_CONNECTTIMEOUT, $this->connecttimeout);
         curl_setopt($ci, CURLOPT_TIMEOUT, $this->timeout);
         curl_setopt($ci, CURLOPT_RETURNTRANSFER, TRUE);
