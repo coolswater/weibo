@@ -78,7 +78,7 @@ class WeiboSDK {
         $params['client_secret'] = $this->client_secret;
         $params['grant_type'] = 'authorization_code';
         
-        $token = $this->post(self::$accessTokenURL, 'POST', $params);
+        $token = $this->post(self::$accessTokenURL, $params);
 		
         if ( is_array($token) && !isset($token['error']) ) {
             $this->access_token = $token['access_token'];
